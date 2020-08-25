@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.135e615b.chunk.js",
+    "main.js.map": "/static/js/main.135e615b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.571700d1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.571700d1.js.map",
+    "static/css/2.117ce29f.chunk.css": "/static/css/2.117ce29f.chunk.css",
+    "static/js/2.31f4c609.chunk.js": "/static/js/2.31f4c609.chunk.js",
+    "static/js/2.31f4c609.chunk.js.map": "/static/js/2.31f4c609.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cf4bbe2b9c94d7cb0498557b9e35e557.js": "/precache-manifest.cf4bbe2b9c94d7cb0498557b9e35e557.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.117ce29f.chunk.css.map": "/static/css/2.117ce29f.chunk.css.map",
+    "static/js/2.31f4c609.chunk.js.LICENSE.txt": "/static/js/2.31f4c609.chunk.js.LICENSE.txt",
+    "static/media/tripsoda_icon.png": "/static/media/tripsoda_icon.1d7a8f8c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.571700d1.js",
+    "static/css/2.117ce29f.chunk.css",
+    "static/js/2.31f4c609.chunk.js",
+    "static/js/main.135e615b.chunk.js"
+  ]
+}
