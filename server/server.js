@@ -11,10 +11,8 @@ app.use(express.static(path.join(__dirname, '..', 'build/')));
 
 
 
-// console.log("start port : " + process.env.PORT)
-// app.listen(process.env.PORT || 3000);
+console.log("start port : " + process.env.PORT)
+app.listen(process.env.PORT || 3000);
 // app.listen(PORT, () => {
 //     console.log(`Check out the app at http://localhost:${PORT}`);
 // });
-console.log("start port : " + process.env.PORT)
-app.listen(process.env.PORT || 3000);
