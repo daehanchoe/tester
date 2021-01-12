@@ -49,7 +49,8 @@ router.get('/save_result', (req, res) => {
 });
 
 router.get('/getData', (req, res) => {
-    db.query("select * from PSY_INFO", (err, rows) => {
+    db.query("select PSY_ID, PSY_ORDER AS COUNT, PSY_TYPE AS TYPE, CONTENTS "
+    +"from PSY_INFO", (err, rows) => {
     if (!err) {
         res.send(rows);
     } else {
