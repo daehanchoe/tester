@@ -4,7 +4,7 @@ host: 'localhost',
 port: 3306,
 user: 'root',
 password: 'mysql0616',
-database: 'mysql'
+database: 'testuser'
 });
 
 module.exports=connection;

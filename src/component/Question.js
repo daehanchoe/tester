@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Question(props) {
-    const title = props.title;
-    const count = props.count;
-    const index = props.index;
+export default function Question({ title, count, index, onClick }) {
 
     return (
-        <QuestionStyled className={count === index ? 'active' : ''}>
+        <QuestionStyled className={count === index ? 'active' : ''}> {/* 카운트와 인덱스가 같을 때 엑티브 클래스 추가. -> 액티브 클래스는 화면에 css를 보여주는 효과를 가진 클래스명*/}
             <h2 className="question-title">{title}</h2>
             <ul>
-                <li onClick={() => props.onClick(index, 1)}>그렇다</li>
-                <li onClick={() => props.onClick(index, -1)}>그렇지 안다</li>
+                <li onClick={() => onClick(index, 1)}>그렇다</li>
+                <li onClick={() => onClick(index, -1)}>그렇지 않다</li>
             </ul>
         </QuestionStyled>
     )
