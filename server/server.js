@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
 const router = require("./routes/router");
-
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 app.use("/", router);
+app.use(cors());
 app.set('views', __dirname + '/views');
+
 // app.use(express.static(path.join(__dirname, '..', 'public/')));
 app.use(express.static(path.join(__dirname, '..', 'build/')));
 

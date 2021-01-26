@@ -14,7 +14,7 @@ export default function Result({ location }) {
 
     useEffect(() => { // useEffact는 render가 완료된 이후 react에서 자체적인 실행을 함. -> javascript 구문, react 구문 아님.
         const script = document.createElement('script')
-        script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+        script.src = 'http://developers.kakao.com/sdk/js/kakao.js'
         script.async = true // 동기화
         document.body.appendChild(script)
         return () => {

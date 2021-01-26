@@ -54,7 +54,8 @@ export default function Result({ history }) {
     }
 
     function search_data(){
-        axios.get('/getData').then(res =>{
+        // const response = await axios.get(
+        axios.get('http://13.209.8.68:3000/getData').then(res =>{
                 console.log(res.data)
         });
     }
@@ -69,6 +70,7 @@ export default function Result({ history }) {
             </Header>
             <Body>
                 <button onClick={search_data}></button>
+                <a href="http://13.209.8.68:3000/getData">sss</a>
             </Body>
             <Bottom>
                 <div className="heart">
