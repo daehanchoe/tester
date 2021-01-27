@@ -24,15 +24,26 @@ router.get('/', function(req, res, next) {
 // 회원가입 로직
 router.post('/save_result', (req, res) => {
   console.log("15문항(관심사 태그 포함");
-  let param = [req.query.q_tag
-    , req.query.q1, req.query.q2, req.query.q3
-    , req.query.q4, req.query.q5, req.query.q6
-    , req.query.q7, req.query.q8, req.query.q9
-    , req.query.q10, req.query.q11, req.query.q12
-    , req.query.q13, req.query.q14
-    , req.query.c
-    , req.query.ext
-    , req.query.open
+  // let param = [req.query.q_tag
+  //   , req.query.q1, req.query.q2, req.query.q3
+  //   , req.query.q4, req.query.q5, req.query.q6
+  //   , req.query.q7, req.query.q8, req.query.q9
+  //   , req.query.q10, req.query.q11, req.query.q12
+  //   , req.query.q13, req.query.q14
+  //   , req.query.c
+  //   , req.query.ext
+  //   , req.query.open
+  // ];
+
+  let param = [3
+    , 1, 1, 1
+    , -1, -1, -1
+    , 1, 1, 1
+    , -1, -1, -1
+    , 1, -1
+    , 'Willy'
+    , 1
+    , 1
   ];
     
     console.log(req.query.q1);
