@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
   }); 
 
 // 회원가입 로직
-router.get('/save_result', function(req, res) {
+router.post('/save_result', function(req, res) {
   // console.log(req.params('esultArray'));
   // console.log(req.query.result[0]);
   console.log(req.query.tag);
