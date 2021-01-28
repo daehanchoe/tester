@@ -22,45 +22,51 @@ router.get('/', function(req, res, next) {
   }); 
 
 // 회원가입 로직
-router.post('/save_result', (req, res) => {
-  console.log("15문항(관심사 태그 포함");
-  // let param = [req.query.q_tag
-  //   , req.query.q1, req.query.q2, req.query.q3
-  //   , req.query.q4, req.query.q5, req.query.q6
-  //   , req.query.q7, req.query.q8, req.query.q9
-  //   , req.query.q10, req.query.q11, req.query.q12
-  //   , req.query.q13, req.query.q14
-  //   , req.query.c
-  //   , req.query.ext
-  //   , req.query.open
-  // ];
-
-  let param = [3
-    , 1, 1, 1
-    , -1, -1, -1
-    , 1, 1, 1
-    , -1, -1, -1
-    , 1, -1
-    , 'Willy'
-    , 1
-    , 1
+router.get('/save_result', function(req, res) {
+  // console.log(req.params('esultArray'));
+  // console.log(req.query.result[0]);
+  console.log(req.query.tag);
+  console.log(req.query.character);
+  console.log(req.query.open);
+  console.log(req.query.extrovert);
+  let param = [req.query.tag
+    , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
+    , req.query.resultArray[3], req.query.resultArray[4], req.query.resultArray[5]
+    , req.query.resultArray[6], req.query.resultArray[7], req.query.resultArray[8]
+    , req.query.resultArray[9], req.query.resultArray[10], req.query.resultArray[11]
+    , req.query.resultArray[12], req.query.resultArray[13]
+    , req.query.character
+    , req.query.extrovert
+    , req.query.open
   ];
+
+  // let param = [3
+  //   , 1, 1, 1
+  //   , -1, -1, -1
+  //   , 1, 1, 1
+  //   , -1, -1, -1
+  //   , 1, -1
+  //   , 'Willy'
+  //   , 1
+  //   , 1
+  // ];
     
-    console.log(req.query.q1);
-    db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
+    // console.log(req.query.q1);
+    res.json({"result":"success"});
+    // db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
-      if (!err) {
-      res.json({"result":"succes" + rows});
-        console.log("succes");
-    } else {
-      console.log(err);
-      res.json({"result":"fail" + rows});
-    }
-    });
+    //   if (!err) {
+    //   res.json({"result":"succes" + rows});
+    //     console.log("succes");
+    // } else {
+    //   console.log(err);
+    //   res.json({"result":"fail" + rows});
+    // }
+    // });
 });
 // 'localhost:4000/getdata'
 router.get('/getData', (req, res) => {
-  axios.get('http://13.209.8.68:3000/getData').then(res =>{
+  axios.get('http://127.0.0.1:4000/getData').then(res =>{
     console.log(res.data)
   });
 });

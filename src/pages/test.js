@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Question({history, location}) {
     
-    const [result, setResult] = useState(location.state.list.concat());
+    const [resultArray, setResult] = useState(location.state.list.concat());
     let cnt = 0;
     
     let q1 = 0;
@@ -71,59 +71,62 @@ export default function Question({history, location}) {
 
     function handleClick1() {
 
-        result[cnt] = "1";
+        resultArray[cnt] = "1";
         q15 = 1;
         save_result();
     }
 
     function handleClick2() {
 
-        result[cnt] = "2";
+        resultArray[cnt] = "2";
         q15 = 2;
         save_result();
     }
 
     function handleClick3() {
 
-        result[cnt] = "3";
+        resultArray[cnt] = "3";
         q15 = 3;
         save_result();
     }
 
     function handleClick4() {
 
-        result[cnt] = "4";
+        resultArray[cnt] = "4";
         q15 = 4;
         save_result();
     }
 
     function handleClick5() {
 
-        result[cnt] = "5";
+        resultArray[cnt] = "5";
         q15 = 5;
         save_result();
     }
 
     function handleClick6() {
         
-        result[cnt] = "6";
+        resultArray[cnt] = "6";
         q15 = 6;
         save_result();  
     }
 
     function save_result() {
-        
-    //     axios.get('/save_result', { params: { q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15 }}).
-    //   then(res => {
+        let tag = "tag";
+        let character = "Willy";
+        let open =3;
+        let extrovert = 2;
+        axios.get("save_result", {params : {resultArray,tag ,character,open,extrovert}})
+      .then(res => {
          
-    //         console.log("in!")
+            console.log("in!")
 
-    //   })
-    //   .catch(res => {console.log("ERR");});
+      })
+      .catch(res => {console.log("ERR");});
         
     history.push({
         pathname: '/result',
-        state: { list: result }
+        state: { list: resultArray }
     });
 
     };
