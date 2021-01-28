@@ -52,7 +52,9 @@ router.post('/save_result', function(req, res) {
   // ];
     
     // console.log(req.query.q1);
-    res.json({"result":"success"});
+    
+    res.setHeader("Access-Control-Allow-Origin").join({"result":"success"});
+    // res.json({"result":"success"});
     // db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
     //   if (!err) {
