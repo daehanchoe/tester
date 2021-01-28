@@ -23,23 +23,24 @@ router.get('/', function(req, res, next) {
 
 // 회원가입 로직
 router.get('/save_result', function(req, res) {
+  console.log("back in!!");
   // console.log(req.params('esultArray'));
   // console.log(req.query.result[0]);
-  console.log(req.query.tag);
-  console.log(req.query.character);
-  console.log(req.query.open);
-  console.log(req.query.extrovert);
+  // console.log(req.query.tag);
+  // console.log(req.query.character);
+  // console.log(req.query.open);
+  // console.log(req.query.extrovert);
 
-  let param = [req.query.tag
-    , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
-    , req.query.resultArray[3], req.query.resultArray[4], req.query.resultArray[5]
-    , req.query.resultArray[6], req.query.resultArray[7], req.query.resultArray[8]
-    , req.query.resultArray[9], req.query.resultArray[10], req.query.resultArray[11]
-    , req.query.resultArray[12], req.query.resultArray[13]
-    , req.query.character
-    , req.query.extrovert
-    , req.query.open
-  ];
+  // let param = [req.query.tag
+  //   , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
+  //   , req.query.resultArray[3], req.query.resultArray[4], req.query.resultArray[5]
+  //   , req.query.resultArray[6], req.query.resultArray[7], req.query.resultArray[8]
+  //   , req.query.resultArray[9], req.query.resultArray[10], req.query.resultArray[11]
+  //   , req.query.resultArray[12], req.query.resultArray[13]
+  //   , req.query.character
+  //   , req.query.extrovert
+  //   , req.query.open
+  // ];
 
   // let param = [3
   //   , 1, 1, 1
