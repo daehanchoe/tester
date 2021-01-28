@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
   }); 
 
 // 회원가입 로직
-router.get('/save_result', function(req, res) {
+router.post('/save_result', function(req, res) {
   console.log("back in!!");
   // console.log(req.params('esultArray'));
   // console.log(req.query.result[0]);
@@ -55,7 +55,7 @@ router.get('/save_result', function(req, res) {
     
     // console.log(req.query.q1);
     
-    res.setHeader({'Access-Control-Allow-Origin':'*'}).join({"result":"success"});
+    res.setHeader('Access-Control-Allow-Origin','*');
     // res.json({"result":"success"});
     // db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
