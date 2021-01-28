@@ -56,7 +56,8 @@ router.post('/save_result', function(req, res) {
     // console.log(req.query.q1);
     
     res.setHeader('Access-Control-Allow-Origin','*');
-    // res.json({"result":"success"});
+    res.setHeader('Access-Control-Allow-Credentials', "true");
+    res.json({"result":"success"});
     // db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
     //   if (!err) {
