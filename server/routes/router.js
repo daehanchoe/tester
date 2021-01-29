@@ -5,6 +5,7 @@ const db = require('../dbconnection');
 const path = require("path");
 const fs = require('fs');
 const axios = require('axios');
+var cors = require('cors');
 
 router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, "../../build/index.html"));
@@ -22,25 +23,25 @@ router.get('/', function(req, res, next) {
   }); 
 
 // 회원가입 로직
-router.post('/save_result', function(req, res) {
+router.post('/save_result',cors(), function(req, res) {
   console.log("back in!!");
-  // console.log(req.params('esultArray'));
-  // console.log(req.query.result[0]);
-  // console.log(req.query.tag);
-  // console.log(req.query.character);
-  // console.log(req.query.open);
-  // console.log(req.query.extrovert);
+  console.log(req.params('esultArray'));
+  console.log(req.query.result[0]);
+  console.log(req.query.tag);
+  console.log(req.query.character);
+  console.log(req.query.open);
+  console.log(req.query.extrovert);
 
-  // let param = [req.query.tag
-  //   , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
-  //   , req.query.resultArray[3], req.query.resultArray[4], req.query.resultArray[5]
-  //   , req.query.resultArray[6], req.query.resultArray[7], req.query.resultArray[8]
-  //   , req.query.resultArray[9], req.query.resultArray[10], req.query.resultArray[11]
-  //   , req.query.resultArray[12], req.query.resultArray[13]
-  //   , req.query.character
-  //   , req.query.extrovert
-  //   , req.query.open
-  // ];
+  let param = [req.query.tag
+    , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
+    , req.query.resultArray[3], req.query.resultArray[4], req.query.resultArray[5]
+    , req.query.resultArray[6], req.query.resultArray[7], req.query.resultArray[8]
+    , req.query.resultArray[9], req.query.resultArray[10], req.query.resultArray[11]
+    , req.query.resultArray[12], req.query.resultArray[13]
+    , req.query.character
+    , req.query.extrovert
+    , req.query.open
+  ];
 
   // let param = [3
   //   , 1, 1, 1
@@ -53,26 +54,24 @@ router.post('/save_result', function(req, res) {
   //   , 1
   // ];
     
-    // console.log(req.query.q1);
-    
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Credentials', "true");
-    res.json({"result":"success"});
-    // db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
+    db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
-    //   if (!err) {
-    //   res.json({"result":"succes" + rows});
-    //     console.log("succes");
-    // } else {
-    //   console.log(err);
-    //   res.json({"result":"fail" + rows});
-    // }
-    // });
+      if (!err) {
+        res.setHeader('Access-Control-Allow-Origin','*');
+        res.setHeader('Access-Control-Allow-Credentials', "true");
+        res.json({"result":"success"});
+        console.log("succes");
+    } else {
+      console.log(err);
+      res.json({"result":"fail" + rows});
+    }
+    });
 });
 // 'localhost:4000/getdata'
-router.get('/getData', (req, res) => {
-  axios.get('http://127.0.0.1:4000/getData').then(res =>{
+router.get('/getData', (req, res1) => {
+  axios.post('http://118.67.132.128:8000/save_result').then(res =>{
     console.log(res.data)
+    res1.json({"result":"success"});
   });
 });
 

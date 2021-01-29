@@ -6,11 +6,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use("/", router);
-app.use(cors({
-    origin: true,
-    credentials: true
-}
-));
+// app.use(cors({
+//     origin: true,
+//     credentials: true
+// }
+// ));
 app.set('views', __dirname + '/views');
 
 // app.use(express.static(path.join(__dirname, '..', 'public/')));

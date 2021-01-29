@@ -116,7 +116,7 @@ export default function Question({history, location}) {
         let character = "Willy";
         let open =3;
         let extrovert = 2;
-        axios.get("save_result", {params : {resultArray,tag ,character,open,extrovert}})
+        axios.post("http://118.67.132.128:8000/save_result", {params : {resultArray,tag ,character,open,extrovert}})
       .then(res => {
          
             console.log("in!")

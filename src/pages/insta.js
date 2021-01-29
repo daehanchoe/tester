@@ -55,8 +55,8 @@ export default function Result({ history }) {
 
     function search_data(){
         // const response = await axios.get(
-        axios.get('http://13.209.8.68:3000/getData').then(res =>{
-                console.log(res.data)
+        axios.post('http://118.67.132.128:8000/save_result').then(res =>{
+                console.log("sdsa");
         });
     }
 
