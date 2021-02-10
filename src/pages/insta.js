@@ -90,7 +90,7 @@ export default function Result({ history }) {
 
         var config = {
             method: 'post',
-            url: 'http://118.67.132.128:8000/save_result',
+            url: 'https://travelmbti.com:4000/save_result',
             headers: { },
             params : data
           };
