@@ -5,7 +5,7 @@ const db = require('../dbconnection');
 const path = require("path");
 const fs = require('fs');
 const axios = require('axios');
-var cors = require('cors');
+const cors = require('cors');
 
 router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, "../../build/index.html"));
@@ -25,12 +25,14 @@ router.get('/', function(req, res, next) {
 // 회원가입 로직
 router.post('/save_result',cors(), function(req, res) {
   console.log("back in!!");
-  console.log(req.params('esultArray'));
-  console.log(req.query.result[0]);
-  console.log(req.query.tag);
-  console.log(req.query.character);
-  console.log(req.query.open);
-  console.log(req.query.extrovert);
+  console.log(req.query);
+  // console.log(req.body);
+  // console.log(req.query.esultArray);
+  // console.log(req.query.result[0]);
+  // console.log(req.query.tag);
+  // console.log(req.query.character);
+  // console.log(req.query.open);
+  // console.log(req.query.extrovert);
 
   let param = [req.query.tag
     , req.query.resultArray[0], req.query.resultArray[1], req.query.resultArray[2]
@@ -42,17 +44,6 @@ router.post('/save_result',cors(), function(req, res) {
     , req.query.extrovert
     , req.query.open
   ];
-
-  // let param = [3
-  //   , 1, 1, 1
-  //   , -1, -1, -1
-  //   , 1, 1, 1
-  //   , -1, -1, -1
-  //   , 1, -1
-  //   , 'Willy'
-  //   , 1
-  //   , 1
-  // ];
     
     db.query("CALL PSY_SAVE_RESULT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",param, (err, rows) => {
   
@@ -60,7 +51,6 @@ router.post('/save_result',cors(), function(req, res) {
         res.setHeader('Access-Control-Allow-Origin','*');
         res.setHeader('Access-Control-Allow-Credentials', "true");
         res.json({"result":"success"});
-        console.log("succes");
     } else {
       console.log(err);
       res.json({"result":"fail" + rows});

@@ -6,7 +6,7 @@ import Willy from '../assets/images/willy.png';
 import data from '../data/data.json';
 import Question from '../component/Question3';
 import axios from 'axios';
-
+import KakaoApi from '../component/kakaosharebutton';
 
 export default function Result({ history }) {
     
@@ -55,7 +55,50 @@ export default function Result({ history }) {
 
     function search_data(){
         // const response = await axios.get(
-        axios.post('http://118.67.132.128:8000/save_result').then(res =>{
+            let tag = "tag";
+            let character = "Willy";
+            let open =3;
+            let extrovert = 2;
+            let resultArray = new Array();
+
+            resultArray[0] = 1;
+            resultArray[1] = 1;
+            resultArray[2] = 1;
+            resultArray[3] = 1;
+            resultArray[4] = 1;
+            resultArray[5] = 1;
+            resultArray[6] = 1;
+            resultArray[7] = 1;
+            resultArray[8] = 1;
+            resultArray[9] = 1;
+            resultArray[10] = 1;
+            resultArray[11] = 1;
+            resultArray[12] = 1;
+            resultArray[13] = 1;
+
+            // let url = "http://118.67.132.128:8000/save_result";
+            // let url = "locahost:4000/save_result";
+        
+        let url = '/save_result';
+        var data = {
+            "tag":tag,
+            "character":character,
+            "open":open,
+            "extrovert":extrovert,
+            "resultArray":resultArray
+        };
+
+        var config = {
+            method: 'post',
+            url: 'http://118.67.132.128:8000/save_result',
+            headers: { },
+            params : data
+          };
+
+        axios(config)
+        // axios.post(url, {params : {resultArray,tag,character,open,extrovert}})
+        // axios.post(url, {resultArray : 'resultArray',tag : '',character,open,extrovert})
+        .then(res =>{
                 console.log("sdsa");
         });
     }
@@ -70,12 +113,13 @@ export default function Result({ history }) {
             </Header>
             <Body>
                 <button onClick={search_data}></button>
-                <a href="http://13.209.8.68:3000/getData">sss</a>
+                <a href="http://13.209.8.68:3000/getData">ss</a>
             </Body>
             <Bottom>
                 <div className="heart">
                     {like_check && <img src={Heart_fill} onClick={handleClick}/>}
                     {!like_check && <img src={Heart} onClick={handleClick}/>}
+                    <KakaoApi/>
                     {/* {!like_check && <img src={Heart}/>} */}
                     {/* <img className="heart" src={Heart_fill} onClick={handleClick}/> */}
                     {/* <img className="heart2" src={Heart}/> */}

@@ -49,28 +49,28 @@ const KakaoShareButton = () => {
           // imageUrl: '/Users/choedaehan/Desktop/trip/src/assets/images/kakaoimage.png', // i.e. process.env.FETCH_URL + '/logo.png'
           imageUrl: '/Users/choedaehan/Desktop/trip/src/assets/images/kakaoimage.png',
           link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com', // window.location.href,
+            mobileWebUrl: 'https://travelmbti.com',
+            webUrl: 'https://travelmbti.com', // window.location.href,
           },
         },
         social: {
             likeCount: 286,
-            commentCount: 45,
+            commentCount: 50,
             sharedCount: 845
         },
         buttons: [
           {
             title: '웹으로 보기',
             link: {
-              mobileWebUrl: 'http://localhost:3000/result',
-              webUrl: 'http://localhost:3000/'+ url_p,
+              mobileWebUrl: 'https://travelmbti.com',
+              webUrl: 'https://travelmbti.com',
             },
           },
           {
             title: '앱으로 보기',
             link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
+              mobileWebUrl: 'https://travelmbti.com',
+              webUrl: 'https://travelmbti.com',
             },
           },
         ],
