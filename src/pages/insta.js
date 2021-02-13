@@ -7,6 +7,9 @@ import data from '../data/data.json';
 import Question from '../component/Question3';
 import axios from 'axios';
 import KakaoApi from '../component/kakaosharebutton';
+import Tweet from '../component/TweetShareBtn';
+import Helmet from 'react-helmet';
+import T from '../component/ssss';
 
 export default function Result({ history }) {
     
@@ -90,9 +93,12 @@ export default function Result({ history }) {
 
         var config = {
             method: 'post',
-            url: 'https://travelmbti.com:4000/save_result',
-            headers: { },
-            params : data
+            url: 'http://118.67.132.128:4000/save_result',
+            headers: { 
+                withCredentials: true,
+                xsrfCookieName: "XSRF-TOKEN",
+                xsrfHeaderName: "X-XSRF-TOKEN", },
+            params : {resultArray, tag, character, extrovert, open}
           };
 
         axios(config)
@@ -103,6 +109,7 @@ export default function Result({ history }) {
         });
     }
 
+    
     return (
     
         <Instagramback>
@@ -113,7 +120,15 @@ export default function Result({ history }) {
             </Header>
             <Body>
                 <button onClick={search_data}></button>
-                <a href="http://13.209.8.68:3000/getData">ss</a>
+                {/* <Helmet>
+                <meta name="twitter:url" content={"https://travelmbti.com/copy_result?char=" + "Willy" + "&tag=" + 2} />
+			    <meta name="twitter:title" content="title" />
+			    <meta name="twitter:description" content="description" />
+			    <meta name="twitter:image" content={Willy} />
+			    <meta name="twitter:card" content="summary" />
+                </Helmet> */}
+                <T></T>
+                <Tweet></Tweet>
             </Body>
             <Bottom>
                 <div className="heart">

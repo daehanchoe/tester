@@ -4,7 +4,7 @@ const router = require("./routes/router");
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const PORT = process.env.PORT || 445;
+const PORT = process.env.PORT || 8080;
 const https = require('https');
 // const vhost = require('vhost');
 
@@ -13,8 +13,8 @@ app.use(cors());
 app.set('views', __dirname + '/views');
 // app.use(vhost('www.test01.com/'))
 
-const privateKey = fs.readFileSync(path.join(__dirname, './server.key')).toString();
-const certificate = fs.readFileSync(path.join(__dirname, './server.crt')).toString();
+// const privateKey = fs.readFileSync(path.join(__dirname, './server.key')).toString();
+// const certificate = fs.readFileSync(path.join(__dirname, './server.crt')).toString();
 
 // const options = {
 //     key: privateKey,
@@ -41,5 +41,5 @@ const options = {
     
     https.createServer(options, app).listen(PORT, () => {
     // colorConsole.success(`[HTTPS] Soda Server is started on port ${colors.cyan(PORT)}`);
-    console.log(`Check out the app at http://localhost:${PORT}`);
+    console.log(`Check out the app at https://localhost:${PORT}`);
   });
