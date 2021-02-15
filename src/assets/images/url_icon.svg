@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
+    <defs>
+        <circle id="r2zf7fvy4a" cx="75" cy="75" r="75"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-779 -2201) translate(779 2201)">
+                    <mask id="am6y2nndzb" fill="#fff">
+                        <use xlink:href="#r2zf7fvy4a"/>
+                    </mask>
+                    <use fill="#23CE7C" xlink:href="#r2zf7fvy4a"/>
+                    <text fill="#FFF" font-family="NanumSquare_acB, NanumSquare_ac" font-size="50" font-weight="bold" letter-spacing="8.75" mask="url(#am6y2nndzb)">
+                        <tspan x="15" y="90">URL</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
