@@ -127,7 +127,7 @@ export default function Result({ history }) {
 			    <meta name="twitter:image" content={Willy} />
 			    <meta name="twitter:card" content="summary" />
                 </Helmet> */}
-                <T></T>
+                {/* <T></T> */}
                 <Tweet></Tweet>
             </Body>
             <Bottom>
